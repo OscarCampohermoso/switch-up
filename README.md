@@ -1,5 +1,7 @@
 # switch-up
 
+![License](https://img.shields.io/badge/License-GPLv2-blue.svg)
+
 A safe, automated SD card manager for Nintendo Switch homebrew on macOS.
 
 ## Why does this exist?
