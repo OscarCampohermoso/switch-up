@@ -1,2 +1,0 @@
-[console_scripts]
-switch-up = switch_up.cli:app
