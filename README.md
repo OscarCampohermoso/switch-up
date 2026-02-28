@@ -121,6 +121,20 @@ These backups persist across sessions so you can always recover your settings.
 | `switch-up --version` | Show the current version |
 | `switch-up --help` | Show help for all commands |
 
+## Platform Support
+
+Currently, **switch-up is macOS-only**. The tool was built specifically to address the hidden-file injection and destructive replace behavior that are unique to macOS.
+
+Windows and Linux are not currently contemplated — and honestly, they don't need it as badly. Windows Explorer merges folders correctly by default, and Linux doesn't inject metadata junk into FAT32/exFAT volumes the way macOS does.
+
+That said, extending support to Windows and Linux is something worth doing. Even without the macOS-specific corruption problems, users on those platforms could still benefit from:
+
+- Automated download and install of Atmosphere + Hekate releases
+- Smart Merge to avoid accidental overwrites
+- A clean CLI experience instead of manually extracting ZIPs
+
+Contributions targeting Windows and Linux support are welcome. The core Smart Merge logic in `core.py` is already platform-agnostic — the main work would be adapting SD card auto-detection (`utils.py`) and removing the macOS-specific sanitization steps from the default update flow.
+
 ## License
 
 GPLv3 — See [LICENSE](LICENSE) for details.
