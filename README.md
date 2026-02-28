@@ -17,15 +17,6 @@ On top of that, macOS Finder's "Replace" behavior is destructive — dragging a 
 3. **Cleans** all macOS junk files that would corrupt the SD card
 4. **Restores** your backup automatically if anything goes wrong
 
-## The Problem in Detail
-
-| macOS Behavior | What Happens on Switch | switch-up Fix |
-|---|---|---|
-| Finder replaces folders instead of merging | Your configs, homebrew apps, and settings get deleted | Smart Merge with `dirs_exist_ok=True` preserves everything |
-| `.DS_Store` and `._*` files injected everywhere | Switch reads them as corrupted data, fails to boot | Recursive cleanup of all macOS metadata files |
-| Extended attributes (xattr) added to files | Hekate and Atmosphere misread files, throw errors | `xattr -cr` strips all extended attributes |
-| `__MACOSX/` folders from ZIP extraction | Junk folders confuse the Switch bootloader | Automatic removal during cleanup |
-
 ## Installation
 
 ### From PyPI
